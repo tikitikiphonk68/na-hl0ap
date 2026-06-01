@@ -1,0 +1,113 @@
+--[[
+	naçhl0ap F3X GUI
+	Theme: Ocean / Light Blue
+	Function: F3X Decal Spam + Silent HD Admin
+]]
+
+local LMG2L = {};
+local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local LP = Players.LocalPlayer
+
+-- UI Container
+LMG2L["ScreenGui_1"] = Instance.new("ScreenGui", LP:WaitForChild("PlayerGui"));
+LMG2L["ScreenGui_1"]["Name"] = "NachloapGUI"
+LMG2L["ScreenGui_1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+
+-- Main Frame (Ocean Blue)
+LMG2L["Frame_2"] = Instance.new("Frame", LMG2L["ScreenGui_1"]);
+LMG2L["Frame_2"]["BorderSizePixel"] = 2;
+LMG2L["Frame_2"]["BackgroundColor3"] = Color3.fromRGB(0, 105, 148); -- Ocean
+LMG2L["Frame_2"]["Size"] = UDim2.new(0, 478, 0, 286);
+LMG2L["Frame_2"]["Position"] = UDim2.new(0.5, -239, 0.5, -143);
+LMG2L["Frame_2"]["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+
+-- Title Label (Light Blue / Black Text)
+LMG2L["TextLabel_3"] = Instance.new("TextLabel", LMG2L["Frame_2"]);
+LMG2L["TextLabel_3"]["BorderSizePixel"] = 0;
+LMG2L["TextLabel_3"]["TextSize"] = 24;
+LMG2L["TextLabel_3"]["BackgroundColor3"] = Color3.fromRGB(173, 216, 230); -- Light Blue
+LMG2L["TextLabel_3"]["FontFace"] = Font.new([[rbxasset://fonts/families/Arial.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+LMG2L["TextLabel_3"]["Size"] = UDim2.new(0, 470, 0, 32);
+LMG2L["TextLabel_3"]["Text"] = [[naçhl0ap F3X GUI]];
+LMG2L["TextLabel_3"]["TextColor3"] = Color3.fromRGB(0, 0, 0); -- Black Text
+LMG2L["TextLabel_3"]["Position"] = UDim2.new(0, 4, 0, 4);
+
+-- Draggable
+Instance.new("UIDragDetector", LMG2L["Frame_2"]);
+
+-- [ SYSTEM FUNCTIONS ] --
+
+local function RunCmd(cmd)
+	pcall(function()
+		ReplicatedStorage:WaitForChild("HDAdminHDClient").Signals:WaitForChild("RequestCommandSilent"):InvokeServer(cmd)
+	end)
+end
+
+-- Exact F3X Decal Spam Logic from previous Virus GUI
+local function F3X_Decal_Spam(id)
+	local tool
+	for i,v in pairs(LP:GetDescendants()) do if v.Name == "SyncAPI" then tool = v.Parent end end
+	if not tool then
+		for i,v in pairs(ReplicatedStorage:GetDescendants()) do if v.Name == "SyncAPI" then tool = v.Parent end end
+	end
+	
+	if tool and tool:FindFirstChild("SyncAPI") then
+		local remote = tool.SyncAPI.ServerEndpoint
+		local function _(args) remote:InvokeServer(unpack(args)) end
+		
+		for _,v in pairs(workspace:GetDescendants()) do
+			if v:IsA("BasePart") then
+				task.spawn(function()
+					local faces = {Enum.NormalId.Front, Enum.NormalId.Back, Enum.NormalId.Right, Enum.NormalId.Left, Enum.NormalId.Top, Enum.NormalId.Bottom}
+					for _, face in pairs(faces) do
+						_({"CreateTextures", {{["Part"] = v, ["Face"] = face, ["TextureType"] = "Decal"}}})
+						_({"SyncTexture", {{["Part"] = v, ["Face"] = face, ["TextureType"] = "Decal", ["Texture"] = "rbxassetid://112375634101147"..id}}})
+					end
+				end)
+			end
+		end
+	end
+end
+
+-- [ BUTTON CREATOR ] --
+
+local function AddBtn(text, pos, callback)
+	local btn = Instance.new("TextButton", LMG2L["Frame_2"]);
+	btn["BorderSizePixel"] = 1;
+	btn["TextSize"] = 18;
+	btn["BackgroundColor3"] = Color3.fromRGB(173, 216, 230); -- Light Blue
+	btn["TextColor3"] = Color3.fromRGB(0, 0, 0); -- Black
+	btn["FontFace"] = Font.new([[rbxasset://fonts/families/Arial.json]], Enum.FontWeight.Bold);
+	btn["Size"] = UDim2.new(0, 116, 0, 42);
+	btn["Position"] = pos;
+	btn["Text"] = text;
+	btn["BorderColor3"] = Color3.fromRGB(255, 255, 255);
+	btn.MouseButton1Click:Connect(callback)
+end
+
+-- [ MAPPING BUTTONS ] --
+
+-- Row 1
+AddBtn("femboy scepter", UDim2.new(0, 4, 0, 38), function() F3X_Decal_Spam(";gear me 114020480") end)
+AddBtn("music", UDim2.new(0, 122, 0, 38), function() RunCmd(";hb Play Musics in my music gui in scriptblox! ") end)
+AddBtn("Rainbow Periaston", UDim2.new(0, 240, 0, 38), function() RunCmd(";gear me 159229806") end)
+AddBtn("OP sword? :D", UDim2.new(0, 358, 0, 38), function() RunCmd(";gear me 94794847") end)
+
+-- Row 2
+AddBtn("title", UDim2.new(0, 4, 0, 82), function() RunCmd(";title all naçhl0ap is here") end)
+AddBtn("avatar all", UDim2.new(0, 122, 0, 82), function() RunCmd(";char all nachloap") end)
+AddBtn("disco", UDim2.new(0, 240, 0, 82), function() RunCmd(";disco") end)
+AddBtn("theme", UDim2.new(0, 358, 0, 82), function() RunCmd(";music 1847661821 ;volume inf") end)
+
+-- Row 3
+AddBtn("explode other", UDim2.new(0, 4, 0, 126), function() RunCmd(";explode others") end)
+AddBtn("title (me)", UDim2.new(0, 122, 0, 126), function() RunCmd(";title me naçhl0ap") end)
+AddBtn("alert", UDim2.new(0, 240, 0, 126), function() RunCmd(";alert all Join naçhl0ap team today!") end)
+AddBtn("hint", UDim2.new(0, 358, 0, 126), function() RunCmd(";hb naçhl0ap angy cuz u dont join his team:(") end)
+
+-- Row 4
+AddBtn("message", UDim2.new(0, 4, 0, 170), function() RunCmd(";sm naçhl0ap said join his team") end)
+AddBtn("teleport all", UDim2.new(0, 122, 0, 170), function() RunCmd(";tp all me") end)
+AddBtn("cmdbar2", UDim2.new(0, 240, 0, 170), function() RunCmd(";cmdbar2") end)
+AddBtn("freakify all", UDim2.new(0, 358, 0, 170), function() RunCmd(";freakify all") end)
