@@ -1,7 +1,7 @@
 --[[
 	naçhl0ap F3X GUI
 	Theme: Ocean / Light Blue
-	Function: Silent HD Admin
+	Function: F3X Decal Spam + Silent HD Admin
 ]]
 
 local LMG2L = {};
@@ -44,7 +44,32 @@ local function RunCmd(cmd)
 	end)
 end
 
--
+-- Exact F3X Decal Spam Logic from previous Virus GUI
+local function F3X_Decal_Spam(id)
+	local tool
+	for i,v in pairs(LP:GetDescendants()) do if v.Name == "SyncAPI" then tool = v.Parent end end
+	if not tool then
+		for i,v in pairs(ReplicatedStorage:GetDescendants()) do if v.Name == "SyncAPI" then tool = v.Parent end end
+	end
+	
+	if tool and tool:FindFirstChild("SyncAPI") then
+		local remote = tool.SyncAPI.ServerEndpoint
+		local function _(args) remote:InvokeServer(unpack(args)) end
+		
+		for _,v in pairs(workspace:GetDescendants()) do
+			if v:IsA("BasePart") then
+				task.spawn(function()
+					local faces = {Enum.NormalId.Front, Enum.NormalId.Back, Enum.NormalId.Right, Enum.NormalId.Left, Enum.NormalId.Top, Enum.NormalId.Bottom}
+					for _, face in pairs(faces) do
+						_({"CreateTextures", {{["Part"] = v, ["Face"] = face, ["TextureType"] = "Decal"}}})
+						_({"SyncTexture", {{["Part"] = v, ["Face"] = face, ["TextureType"] = "Decal", ["Texture"] = "rbxassetid://"..id}}})
+					end
+				end)
+			end
+		end
+	end
+end
+
 -- [ BUTTON CREATOR ] --
 
 local function AddBtn(text, pos, callback)
@@ -59,29 +84,30 @@ local function AddBtn(text, pos, callback)
 	btn["Text"] = text;
 	btn["BorderColor3"] = Color3.fromRGB(255, 255, 255);
 	btn.MouseButton1Click:Connect(callback)
+end
 
 -- [ MAPPING BUTTONS ] --
 
 -- Row 1
 AddBtn("femboy scepter", UDim2.new(0, 4, 0, 38), function() RunCmd(";gear me 114020480") end)
-AddBtn("music", UDim2.new(0, 122, 0, 38), function() RunCmd(";hb Play Musics in my music gui in scriptblox! ") end)
+AddBtn("music gui", UDim2.new(0, 122, 0, 38), function() RunCmd(";hb music is at scriptblox!") end)
 AddBtn("Rainbow Periaston", UDim2.new(0, 240, 0, 38), function() RunCmd(";gear me 159229806") end)
-AddBtn("OP sword? :D", UDim2.new(0, 358, 0, 38), function() RunCmd(";gear me 94794847") end)
+AddBtn("OP sword :D", UDim2.new(0, 358, 0, 38), function() RunCmd(";gear me 512422543") end)
 
 -- Row 2
-AddBtn("title", UDim2.new(0, 4, 0, 82), function() RunCmd(";title all naçhl0ap is here") end)
-AddBtn("avatar all", UDim2.new(0, 122, 0, 82), function() RunCmd(";char others nachloap") end)
+AddBtn("title", UDim2.new(0, 4, 0, 82), function() RunCmd(";titleb all naçhl0ap is here") end)
+AddBtn("avatar all", UDim2.new(0, 122, 0, 82), function() RunCmd(";char all nachloap") end)
 AddBtn("disco", UDim2.new(0, 240, 0, 82), function() RunCmd(";disco") end)
-AddBtn("theme", UDim2.new(0, 358, 0, 82), function() RunCmd(";music 1847661821 ;volume inf") end)
+AddBtn("rick", UDim2.new(0, 358, 0, 82), function() RunCmd(";music 7363412529") end)
 
 -- Row 3
-AddBtn("explode other", UDim2.new(0, 4, 0, 126), function() RunCmd(";explode others") end)
+AddBtn("explode others", UDim2.new(0, 4, 0, 126), function() RunCmd(";explode others") end)
 AddBtn("title (me)", UDim2.new(0, 122, 0, 126), function() RunCmd(";title me naçhl0ap") end)
 AddBtn("alert", UDim2.new(0, 240, 0, 126), function() RunCmd(";alert all Join naçhl0ap team today!") end)
-AddBtn("hint", UDim2.new(0, 358, 0, 126), function() RunCmd(";hb naçhl0ap angy cuz u dont join his team:(") end)
+AddBtn("hint", UDim2.new(0, 358, 0, 126), function() RunCmd(";h naçhl0ap wanted to join his team") end)
 
 -- Row 4
 AddBtn("message", UDim2.new(0, 4, 0, 170), function() RunCmd(";sm naçhl0ap said join his team") end)
 AddBtn("teleport all", UDim2.new(0, 122, 0, 170), function() RunCmd(";tp all me") end)
 AddBtn("cmdbar2", UDim2.new(0, 240, 0, 170), function() RunCmd(";cmdbar2") end)
-AddBtn("dino all", UDim2.new(0, 358, 0, 170), function() RunCmd(";dino others") end)
+AddBtn("dino others", UDim2.new(0, 358, 0, 170), function() RunCmd(";dino others") end)
