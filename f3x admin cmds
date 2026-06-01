@@ -90,24 +90,24 @@ end
 
 -- Row 1
 AddBtn("femboy scepter", UDim2.new(0, 4, 0, 38), function() RunCmd(";gear me 114020480") end)
-AddBtn("music gui", UDim2.new(0, 122, 0, 38), function() RunCmd(";hb music is at scriptblox!") end)
+AddBtn("music gui", UDim2.new(0, 122, 0, 38), function() RunCmd(";hb music is at scriptblox! (name is "Music GUI)") end)
 AddBtn("Rainbow Periaston", UDim2.new(0, 240, 0, 38), function() RunCmd(";gear me 159229806") end)
-AddBtn("OP sword :D", UDim2.new(0, 358, 0, 38), function() RunCmd(";gear me 512422543") end)
+AddBtn("zombies rawr", UDim2.new(0, 358, 0, 38), function() RunCmd(";gear me 64647651") end)
 
 -- Row 2
-AddBtn("title", UDim2.new(0, 4, 0, 82), function() RunCmd(";titleb all naçhl0ap is here") end)
+AddBtn("title", UDim2.new(0, 4, 0, 82), function() RunCmd(";titleb all naçhl0ap's team member") end)
 AddBtn("avatar all", UDim2.new(0, 122, 0, 82), function() RunCmd(";char all nachloap") end)
 AddBtn("disco", UDim2.new(0, 240, 0, 82), function() RunCmd(";disco") end)
-AddBtn("rick", UDim2.new(0, 358, 0, 82), function() RunCmd(";music 7363412529") end)
+AddBtn("car", UDim2.new(0, 358, 0, 82), function() RunCmd(";gear me 253519495") end)
 
 -- Row 3
 AddBtn("explode others", UDim2.new(0, 4, 0, 126), function() RunCmd(";explode others") end)
-AddBtn("title (me)", UDim2.new(0, 122, 0, 126), function() RunCmd(";title me naçhl0ap") end)
+AddBtn("title (me)", UDim2.new(0, 122, 0, 126), function() RunCmd(";titler me naçhl0ap") end)
 AddBtn("alert", UDim2.new(0, 240, 0, 126), function() RunCmd(";alert all Join naçhl0ap team today!") end)
-AddBtn("hint", UDim2.new(0, 358, 0, 126), function() RunCmd(";h naçhl0ap wanted to join his team") end)
+AddBtn("hint", UDim2.new(0, 358, 0, 126), function() RunCmd(";hb naçhl0ap wanted you to join his team") end)
 
 -- Row 4
 AddBtn("message", UDim2.new(0, 4, 0, 170), function() RunCmd(";sm naçhl0ap said join his team") end)
 AddBtn("teleport all", UDim2.new(0, 122, 0, 170), function() RunCmd(";tp all me") end)
 AddBtn("cmdbar2", UDim2.new(0, 240, 0, 170), function() RunCmd(";cmdbar2") end)
-AddBtn("dino others", UDim2.new(0, 358, 0, 170), function() RunCmd(";dino others") end)
+AddBtn("freakify them", UDim2.new(0, 358, 0, 170), function() RunCmd(";freakify all") end)
