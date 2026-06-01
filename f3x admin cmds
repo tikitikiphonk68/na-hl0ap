@@ -89,7 +89,7 @@ end
 -- [ MAPPING BUTTONS ] --
 
 -- Row 1
-AddBtn("femboy scepter", UDim2.new(0, 4, 0, 38), function() RunCmd("gear me 114020480") end)
+AddBtn("femboy scepter", UDim2.new(0, 4, 0, 38), function() RunCmd(";gear me 114020480") end)
 AddBtn("Music GUI", UDim2.new(0, 122, 0, 38), function() RunCmd(";hb music is at scriptblox!") end)
 AddBtn("Rainbow Periaston", UDim2.new(0, 240, 0, 38), function() RunCmd(";gear me 159229806") end)
 AddBtn("Zombie rawr", UDim2.new(0, 358, 0, 38), function() RunCmd("; gear me 64647651") end)
