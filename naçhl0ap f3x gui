@@ -1,18 +1,21 @@
---[[
-	naçhl0ap F3X GUI
-	Theme: Ocean / Light Blue
-	Function: F3X Decal Spam + Silent HD Admin
-]]
-
 local LMG2L = {};
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local LP = Players.LocalPlayer
 
--- UI Container
-LMG2L["ScreenGui_1"] = Instance.new("ScreenGui", LP:WaitForChild("PlayerGui"));
+-- 1. Get PlayerGui safely and check for existing GUI to prevent duplicates
+local playerGui = LP:WaitForChild("PlayerGui")
+local existingGui = playerGui:FindFirstChild("NachloapGUI")
+if existingGui then
+    existingGui:Destroy()
+end
+
+-- 2. UI Container (With ResetOnSpawn turned OFF)
+LMG2L["ScreenGui_1"] = Instance.new("ScreenGui");
 LMG2L["ScreenGui_1"]["Name"] = "NachloapGUI"
 LMG2L["ScreenGui_1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+LMG2L["ScreenGui_1"]["ResetOnSpawn"] = false -- THIS KEEPS THE GUI ALIVE WHEN YOU DIE
+LMG2L["ScreenGui_1"].Parent = playerGui
 
 -- Main Frame (Ocean Blue)
 LMG2L["Frame_2"] = Instance.new("Frame", LMG2L["ScreenGui_1"]);
@@ -89,25 +92,25 @@ end
 -- [ MAPPING BUTTONS ] --
 
 -- Row 1
-AddBtn("femboy scepter", UDim2.new(0, 4, 0, 38), function() RunCmd(";gear me 114020480") end)
-AddBtn("Music GUI", UDim2.new(0, 122, 0, 38), function() RunCmd(";hb music is at scriptblox!") end)
+AddBtn("torture them", UDim2.new(0, 4, 0, 38), function() RunCmd(";gear me 116986884") end)
+AddBtn("Music GUI", UDim2.new(0, 122, 0, 38), function() RunCmd(";hb music is at scriptblox and github!") end)
 AddBtn("Rainbow Periaston", UDim2.new(0, 240, 0, 38), function() RunCmd(";gear me 159229806") end)
-AddBtn("Zombie rawr", UDim2.new(0, 358, 0, 38), function() RunCmd("; gear me 64647651") end)
+AddBtn("Zombie rawr", UDim2.new(0, 358, 0, 38), function() RunCmd("; gear me 26421972") end)
 
 -- Row 2
-AddBtn("title", UDim2.new(0, 4, 0, 82), function() RunCmd(";title all naçhl0ap is here") end)
+AddBtn("title", UDim2.new(0, 4, 0, 82), function() RunCmd(";titleb all naçhl0ap is here ;titler me naçhl0ap") end)
 AddBtn("avatar all", UDim2.new(0, 122, 0, 82), function() RunCmd(";char all nachloap") end)
-AddBtn("disco", UDim2.new(0, 240, 0, 82), function() RunCmd(";disco") end)
+AddBtn("disco", UDim2.new(0, 240, 0, 82), function() RunCmd(";disco ;time 0 ;fog") end)
 AddBtn("vamp sword", UDim2.new(0, 358, 0, 82), function() RunCmd(";gear me 94794847") end)
 
 -- Row 3
 AddBtn("explode others", UDim2.new(0, 4, 0, 126), function() RunCmd(";explode others") end)
-AddBtn("title (me)", UDim2.new(0, 122, 0, 126), function() RunCmd(";title me naçhl0ap") end)
+AddBtn("message (again)", UDim2.new(0, 122, 0, 126), function() RunCmd(";smb naçhl0ap team: Antiskid Group") end)
 AddBtn("alert", UDim2.new(0, 240, 0, 126), function() RunCmd(";alert all Join naçhl0ap team today!") end)
-AddBtn("hint", UDim2.new(0, 358, 0, 126), function() RunCmd(";h naçhl0ap wants u to join his team") end)
+AddBtn("hint", UDim2.new(0, 358, 0, 126), function() RunCmd(";hb naçhl0ap wants u to join his team") end)
 
 -- Row 4
-AddBtn("message", UDim2.new(0, 4, 0, 170), function() RunCmd(";sm naçhl0ap said join his team") end)
-AddBtn("car", UDim2.new(0, 122, 0, 170), function() RunCmd(";gear me 253519495") end)
+AddBtn("message", UDim2.new(0, 4, 0, 170), function() RunCmd(";smb naçhl0ap said join his team") end)
+AddBtn("troll pet", UDim2.new(0, 122, 0, 170), function() RunCmd(";gear me 92646698") end)
 AddBtn("cmdbar2", UDim2.new(0, 240, 0, 170), function() RunCmd(";cmdbar2") end)
-AddBtn("freakify all", UDim2.new(0, 358, 0, 170), function() RunCmd(";freakify all") end)
+AddBtn("plane all", UDim2.new(0, 358, 0, 170), function() RunCmd(";plane all") end)
