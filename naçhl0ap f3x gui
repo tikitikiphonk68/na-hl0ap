@@ -92,10 +92,10 @@ end
 -- [ MAPPING BUTTONS ] --
 
 -- Row 1
-AddBtn("torture them", UDim2.new(0, 4, 0, 38), function() RunCmd(";gear me 116986884") end)
+AddBtn("famous", UDim2.new(0, 4, 0, 38), function() RunCmd(";gear me 124126528") end)
 AddBtn("Music GUI", UDim2.new(0, 122, 0, 38), function() RunCmd(";hb music is at scriptblox and github!") end)
-AddBtn("Rainbow Periaston", UDim2.new(0, 240, 0, 38), function() RunCmd(";gear me 159229806") end)
-AddBtn("Zombie rawr", UDim2.new(0, 358, 0, 38), function() RunCmd("; gear me 26421972") end)
+AddBtn("chaos sword", UDim2.new(0, 240, 0, 38), function() RunCmd(";gear me 93136746") end)
+AddBtn("crimSON✌️💔", UDim2.new(0, 358, 0, 38), function() RunCmd("; gear me 99119240") end)
 
 -- Row 2
 AddBtn("title", UDim2.new(0, 4, 0, 82), function() RunCmd(";titleb all naçhl0ap is here ;titler me naçhl0ap") end)
@@ -105,12 +105,12 @@ AddBtn("vamp sword", UDim2.new(0, 358, 0, 82), function() RunCmd(";gear me 94794
 
 -- Row 3
 AddBtn("explode others", UDim2.new(0, 4, 0, 126), function() RunCmd(";explode others") end)
-AddBtn("message (again)", UDim2.new(0, 122, 0, 126), function() RunCmd(";smb naçhl0ap team: Antiskid Group") end)
+AddBtn("message (again)", UDim2.new(0, 122, 0, 126), function() RunCmd(";sm naçhl0ap team: Antiskid Group") end)
 AddBtn("alert", UDim2.new(0, 240, 0, 126), function() RunCmd(";alert all Join naçhl0ap team today!") end)
 AddBtn("hint", UDim2.new(0, 358, 0, 126), function() RunCmd(";hb naçhl0ap wants u to join his team") end)
 
 -- Row 4
-AddBtn("message", UDim2.new(0, 4, 0, 170), function() RunCmd(";smb naçhl0ap said join his team") end)
-AddBtn("troll pet", UDim2.new(0, 122, 0, 170), function() RunCmd(";gear me 92646698") end)
+AddBtn("message", UDim2.new(0, 4, 0, 170), function() RunCmd(";sm naçhl0ap said join his team") end)
+AddBtn("spooky bones", UDim2.new(0, 122, 0, 170), function() RunCmd(";gear me 95951330") end)
 AddBtn("cmdbar2", UDim2.new(0, 240, 0, 170), function() RunCmd(";cmdbar2") end)
-AddBtn("plane all", UDim2.new(0, 358, 0, 170), function() RunCmd(";plane all") end)
+AddBtn("plane all", UDim2.new(0, 358, 0, 170), function() RunCmd(";r15 others ;plane others") end)
