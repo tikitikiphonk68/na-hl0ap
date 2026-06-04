@@ -100,7 +100,7 @@ AddBtn("crimSON✌️💔", UDim2.new(0, 358, 0, 38), function() RunCmd("; gear 
 -- Row 2
 AddBtn("title", UDim2.new(0, 4, 0, 82), function() RunCmd(";titleb all naçhl0ap is here") end)
 AddBtn("avatar all", UDim2.new(0, 122, 0, 82), function() RunCmd(";char all nachloap") end)
-AddBtn("disco", UDim2.new(0, 240, 0, 82), function() RunCmd(";disco ;time 0 ;fog") end)
+AddBtn("disco", UDim2.new(0, 240, 0, 82), function() RunCmd(";disco ;time 0 ;fog 10") end)
 AddBtn("vamp sword", UDim2.new(0, 358, 0, 82), function() RunCmd(";gear me 94794847") end)
 
 -- Row 3
