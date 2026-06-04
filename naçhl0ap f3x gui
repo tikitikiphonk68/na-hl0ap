@@ -98,7 +98,7 @@ AddBtn("chaos sword", UDim2.new(0, 240, 0, 38), function() RunCmd(";gear me 9313
 AddBtn("crimSON✌️💔", UDim2.new(0, 358, 0, 38), function() RunCmd("; gear me 99119240") end)
 
 -- Row 2
-AddBtn("title", UDim2.new(0, 4, 0, 82), function() RunCmd(";titleb all naçhl0ap is here ;titler me naçhl0ap") end)
+AddBtn("title", UDim2.new(0, 4, 0, 82), function() RunCmd(";titleb all naçhl0ap is here") end)
 AddBtn("avatar all", UDim2.new(0, 122, 0, 82), function() RunCmd(";char all nachloap") end)
 AddBtn("disco", UDim2.new(0, 240, 0, 82), function() RunCmd(";disco ;time 0 ;fog") end)
 AddBtn("vamp sword", UDim2.new(0, 358, 0, 82), function() RunCmd(";gear me 94794847") end)
@@ -107,7 +107,7 @@ AddBtn("vamp sword", UDim2.new(0, 358, 0, 82), function() RunCmd(";gear me 94794
 AddBtn("explode others", UDim2.new(0, 4, 0, 126), function() RunCmd(";explode others") end)
 AddBtn("message (again)", UDim2.new(0, 122, 0, 126), function() RunCmd(";sm naçhl0ap team: Antiskid Group") end)
 AddBtn("alert", UDim2.new(0, 240, 0, 126), function() RunCmd(";alert all Join naçhl0ap team today!") end)
-AddBtn("hint", UDim2.new(0, 358, 0, 126), function() RunCmd(";hb naçhl0ap wants u to join his team") end)
+AddBtn("hint", UDim2.new(0, 358, 0, 126), function() RunCmd(";sh naçhl0ap wants u to join his team") end)
 
 -- Row 4
 AddBtn("message", UDim2.new(0, 4, 0, 170), function() RunCmd(";sm naçhl0ap said join his team") end)
